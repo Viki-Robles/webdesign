@@ -1,42 +1,46 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from "react";
+import Button from "@material-ui/core/Button"
+import {Grid, Typography} from '@material-ui/core';
+import menuicon from '../images/menuicon.svg';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const useStyles = makeStyles((theme) => ({
+  header: {
+    backgroundColor: '#C4C4C4'
+  },
+  button: {
+    backgroundColor:'black',
+    color:'white',
+    textTransform: 'none',
+    margin:'10px'
+  },
+  menuicon: {
+    margin:'5px',
+    width:'7%'
+  },
+  headersubcontainer: {
+    paddingRight:'10px'
+  },
+  headerTitle: {
+    padding:'10px 0 10px 10px',
+    fontFamily:'Nova Slim',
+    color:'#FAFF00'
+  }
+
+}))
+
+
+export default function Header() {
+  const classes = useStyles();
+
+  return (
+    <Grid container md={12} className={classes.header}>
+      <Grid container md={6} className={classes.headerTitle}><Typography variant='h4' component='h3'>WebLab</Typography></Grid>
+      <Grid container md={6} justify='flex-end' className={classes.headersubcontainer}>
+        <Button variant="contained" color={'primary'} className={classes.button}>Contact us</Button>
+        <img src={menuicon} className={classes.menuicon}/>
+      </Grid>
+    </Grid>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

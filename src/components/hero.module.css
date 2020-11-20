@@ -1,0 +1,163 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+
+.button {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.blurred {
+    position: relative;
+    top: 0; 
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.blurred::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    top: 25%;
+    left: 50%;
+    background-color: #EDFF00;
+    transition: .4s;
+}
+.blurred::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-color: #EDFF00;
+    border-radius: 100%;
+    transition: .4s;
+}
+.blurred > span:nth-of-type(1) {
+   position: absolute;
+   width: 5px;
+   height: 5px;
+   top: 0;
+   left: 0;
+   background-color: #EDFF00;
+   border-radius: 100%;
+   transition: .2s;
+}
+.blurred > span:nth-of-type(2) {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 0;
+  left: 0;
+  background-color: #EDFF00;
+  border-radius: 100%;
+  transition: .2s;
+}
+
+.blurred > span:nth-of-type(3) {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background-color: #EDFF00;
+    border-radius: 100%;
+    transition: .2s;
+  }
+
+.blurred > span:nth-of-type(4) {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background-color: #EDFF00;
+    border-radius: 100%;
+    transition: .2s;
+  }
+
+  .blurred > span:nth-of-type(5) {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background-color: #EDFF00;
+    border-radius: 100%;
+    transition: .2s;
+  }
+
+  .blurred > span:nth-of-type(6) {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background-color: #EDFF00;
+    border-radius: 100%;
+    transition: .2s;
+ }
+.button:hover .blurred::before {
+    width: 50px;
+    height: 50px;
+    top: 50%; left: 50%;
+}
+.button:hover .blurred::after {
+    width: 15px;
+    height: 15px;
+    top: 30px;
+    left: 45px;
+}
+.button:hover .blurred>span:nth-of-type(1) {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+    left: -20px;
+}
+.button:hover > .blurred>span:nth-of-type(2) {
+    width: 25px;
+    height: 25px;
+    top: 40px;
+    left: -20px;
+}
+.button:hover > .blurred>span:nth-of-type(3) {
+    width: 15px;
+    height: 15px;
+    top: -100px;
+    left: 400px;
+}
+.button:hover > .blurred>span:nth-of-type(4) {
+    width: 55px;
+    height: 55px;
+    top: -200px;
+    left: 400px;
+}
+.button:hover > .blurred>span:nth-of-type(5) {
+    width: 30px;
+    height: 30px;
+    top: -40px;
+    left: 40px;
+}
+.button:hover > .blurred>span:nth-of-type(6) {
+    width: 20px;
+    height: 20px;
+    top: -80px;
+    left: 60px;
+}
+
+.buttonName {
+        position: absolute;
+        top: 45%; 
+        left: 70%;
+        transform: translate(-100%, -100%);
+        font-size: 15px;
+        z-index: 10;
+        color: black;
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+
+}
