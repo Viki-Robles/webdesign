@@ -1,3 +1,14 @@
+
+
+import React from "react"
+import "./layout.css"
+
+
+export default function Layout({ children }) {
+  return <div>{children}</div>
+}
+
+
 // /**
 //  * Layout component that queries for data
 //  * with Gatsby's useStaticQuery component
@@ -8,8 +19,6 @@
 // import React from "react"
 // import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
-
-// import Header from "./header"
 
 
 // const Layout = ({ children }) => {

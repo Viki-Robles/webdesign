@@ -1,5 +1,8 @@
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin:0; padding:0; box-sizing:border-box;}
 
+* html {
+    background-color:#C4C4C4;
+}
 
 .button {
     position: relative;
@@ -161,3 +164,4 @@
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 
 }
+

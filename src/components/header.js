@@ -13,14 +13,20 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:'black',
     color:'white',
     textTransform: 'none',
-    margin:'10px'
+    margin:'10px',
+    [theme.breakpoints.down('xs')]: {
+      display:'none'
+    },
   },
   menuicon: {
     margin:'5px',
-    width:'7%'
+    [theme.breakpoints.down('sm')]: {
+      width:'10%',
+    },
+
   },
   headersubcontainer: {
-    paddingRight:'10px'
+    paddingRight:'10px',
   },
   headerTitle: {
     padding:'10px 0 10px 10px',
@@ -36,8 +42,8 @@ export default function Header() {
 
   return (
     <Grid container md={12} className={classes.header}>
-      <Grid container md={6} className={classes.headerTitle}><Typography variant='h4' component='h3'>WebLab</Typography></Grid>
-      <Grid container md={6} justify='flex-end' className={classes.headersubcontainer}>
+      <Grid container md={6} className={classes.headerTitle} xs={6}><Typography variant='h4' component='h3'>WebLab</Typography></Grid>
+      <Grid container md={6} justify='flex-end' className={classes.headersubcontainer} xs={6}>
         <Button variant="contained" color={'primary'} className={classes.button}>Contact us</Button>
         <img src={menuicon} className={classes.menuicon}/>
       </Grid>
