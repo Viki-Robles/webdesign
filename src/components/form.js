@@ -1,4 +1,4 @@
-import { TextField } from "@material-ui/core";
+import { TextField, Typography } from "@material-ui/core";
 import React from "react";
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto'
     },
     formControl: {
-        backgroundColor: '#EDFF00',
+        backgroundColor: 'yellow',
         paddingTop: '100px',
         marginTop:'200px'
     },
@@ -25,8 +25,12 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonContainer: {
         textAlign: 'center',
-        backgroundColor: '#EDFF00',
+        backgroundColor: 'yellow',
         paddingBottom: '100px'
+
+    },
+    typography: {
+        padding:'20px',
 
     }
 }))
@@ -37,6 +41,7 @@ export default function Form() {
     return (
         <>
             <Grid md={12} className={classes.formControl}>
+                <Typography variant='h4' component='h4' className={classes.typography}>Let's work together...</Typography>
                 <form>
                     <Grid container direction='column' md={3} className={classes.formContainer}>
                         <TextField

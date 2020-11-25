@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
           },
 
     },
+    secondButtonContainer: {
+        marginTop:'20px',
+        justifyContent: 'center'
+    },
     secondMain: {
         marginBottom: '40px'
     },
@@ -65,17 +69,17 @@ export default function Main() {
                 <Typography variant='h4' component='h4' className={classes.typography}>Case Studies.</Typography>
                 <Grid container md={12} className={classes.firstMain}>
                     <Grid container md={6} className={classes.firstBox}>
-                        <Typography variant='h4' component='h3'>Design.</Typography>
-                        <Typography component='p'>
+                        <Typography variant='h3' component='h5'>Design.</Typography>
+                        <Typography component='p' variant='h6'>
                             Hellohub is an app that connects locals in the social
                             distancing age and eases the void of social interaction, by enhancing human connection through.
                      </Typography>
                         <Typography variant='h6' component='h6' className={classes.challenge}>Challenge:</Typography>
-                    <Typography>Redesign the UI of the HelloHub website and the venue app Interface.</Typography>
+                    <Typography component='p' variant='h6'>Redesign the UI of the HelloHub website and the venue app Interface.</Typography>
                 </Grid>
                 <Grid container md={6} direction='column' className={classes.pictureContainer}>
                         <img src={hellohub} alt='' className={classes.picture} />
-                        <Grid container className={classes.buttonContainer}>
+                        <Grid container className={classes.secondButtonContainer}>
                             <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button>
                         </Grid>
                     </Grid>
@@ -88,12 +92,12 @@ export default function Main() {
                         </Grid>
                     </Grid>
                     <Grid container md={6} className={classes.secondBox}>
-                        <Typography variant='h4' component='h3'>Build.</Typography>
-                        <Typography>
+                        <Typography variant='h3' component='h5'>Build.</Typography>
+                        <Typography component='p' variant='h6'>
                             Brezaa is a dating app that uses icebreakers to break the uncomfort of meeting someone first time.
                             </Typography>
                     <Typography variant='h6' component='h6' className={classes.challenge}>Challenge:</Typography>
-                            <Typography>Worked on building Brezaa's new Home page for the launch of the new website.</Typography>
+                            <Typography component='p' variant='h6'>Worked on building Brezaa's new Home page for the launch of the new website.</Typography>
                     </Grid>
                 </Grid>
             </Grid>
