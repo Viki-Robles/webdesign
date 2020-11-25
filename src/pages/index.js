@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import Header from '../components/header';
 import Hero from '../components/hero';
 import Main from '../components/main';
-import About from '../components/about';
-import Form from '../components/form';
 import Layout from "../components/layout"
+import Timeline from '../components/index'
+import Form from '../components/form';
 
 const IndexPage = () => (
  <>
@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Header/>
     <Hero/>
     <Main/>
-    <About/>
+    <Timeline/>
     <Form/>
     </Layout>
     {/* <Link to="/page-2/">Go to page 2</Link> <br />

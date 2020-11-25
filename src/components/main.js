@@ -1,158 +1,103 @@
 import React from 'react';
-import {Grid, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import breza from '../images/phone.png';
-import hellohub from '../images/phone.svg';
 import Button from "@material-ui/core/Button"
-import Image from '../images/background.png';
-import layers from '../images/layers.png';
-import styles from './main.module.css';
-import arrow from '../images/arrow.svg';
+import { Grid, Typography } from '@material-ui/core';
+import hellohub from '../images/hellohub.png';
+import './main.module.css';
+import breza from '../images/breza.png';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
+
 const data = [
-    {picture: hellohub, text: [{firstText:'Redesigning HelloHub'}, {secondText:'Web Design - UI'}]},
-    {picture: breza,  text: [{firstText:'Launching Brezaa'}, {secondText:'Web Design - UI'}]}
+    { id: 1, header: 'Design', challenge: 'Challenge', paragraph: 'Hellohub is an app that connects locals in the social distancing age and eases the void of social interaction, by enhancing human connection through.', solution: 'Redesign the UI of the HelloHub website and the venue app Interface.', picture: hellohub },
+    { id: 2, header: 'Build', challenge: 'Challenge', paragraph: 'Brezaa is a dating app that uses icebreakers to break the uncomfort of meeting someone first time.', solution: 'Worked on building Brezaas new Home page for the launch of the new website.', picture: breza },
 
 ]
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-        margin: '0', 
-        padding: '0',
-        position: 'relative',
-        maxWidth: '900px',
-        transform: 'skew(0deg, 20deg)',
-        textAlign:'center',
-        [theme.breakpoints.down('xs')]: {
-            paddingTop:'110%'
-          },
-          [theme.breakpoints.up('md')]: {
-            paddingTop:'45%',
-          },
-          [theme.breakpoints.up('lg')]: {
-            paddingTop:'30%',
-          }
-        
+    main: {
+        paddingTop: '80px',
+
+    },
+    typography: {
+        paddingLeft: '40px',
+        fontWeight: 'bold',
+    },
+    firstBox: {
+        padding: '10%'
+    },
+    secondBox: {
+        padding: '10%'
     },
     picture: {
-        borderRadius:'10px',
-        width:'100%',
-        textAlign:'center',
-       
-
-    },
-    pictureContainer: {
-        textAlign:'center',
-        borderRadius:'10px',
-    },
-    text: {
-        color: 'white',
-       
-    },
-    main: {
-        paddingRight: '11.1111%',
-        paddingLeft:'10%',
-        justifyContent:'center'
-    },
-    title: {
-        color:'black',
-       
-        padding:'100px 0 0 0',
-        fontWeight:'bold'
+        width: '45%',
+        margin: '0 auto'
     },
     button: {
-        backgroundColor:'#EDFF00',
-        color:'black',
+        color: 'black',
+        background: '#F9FE12',
         textTransform: 'none',
-        margin:'10px',
-        fontSize:'20px',
-      },
-      buttonContainer: {
-          textAlign: 'left',
-          paddingTop:'40px'
-      },
-      background: {
-        // backgroundImage: `url(${layers})`,
-        // backgroundColor:'#C4C4C4',
-        // backgroundSize:'cover'
-      },
-      arrow: {
-          textAlign:'left',
-          paddingBottom:'20px',
-          [theme.breakpoints.down('xs')]: {
-            display:'none'
+    },
+    buttonContainer: {
+        justifyContent: 'center'
+    },
+    secondPictureContainer: {
+        paddingLeft: '40px',
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft:'0px'
           },
-      }
-     
-}))
-const theme = createMuiTheme();
-theme.typography.h4 = {
-    fontSize: '30px',
-    textAlign: 'left',
-    '@media (min-width:600px)': {
-        fontSize: '3vw',
-        textAlign: 'left',
-    },
-    [theme.breakpoints.up('md')]: {
-        fontSize: '3vw',
-        textAlign: 'left',
-    },
-};
 
+    },
+    secondMain: {
+        marginBottom: '40px'
+    },
+    challenge: {
+        fontWeight: 'bold'
+    }
 
+}));
 export default function Main() {
     const classes = useStyles();
 
-    return(
+    return (
         <>
-        <div className={styles.section}>
-        {/* <Grid className={classes.background}> */}
-        <Grid container md={12} className={classes.container} justify="space-between" xs={12} sm={12}>
-            {
-                data.map(({ picture, text:[{firstText, secondText}] }, index) => {
-                    const reverseItems = index % 2 === 0;
-                   return( 
-                       <Grid container direction={reverseItems ? 'row-reverse' : ''}>
-                        <Grid
-                            md={6}
-                            sm={6}
-                            className={classes.main}
-                            container
-                            direction="column">
-                        <Grid container={classes.typographyContainer}>
-                            <Grid className={classes.arrow}>
-                            <img src={arrow}/>
-                            </Grid>
-                            <ThemeProvider theme={theme}>
-                            <Typography component='h4'
-                                variant='h4'
-                                className={classes.text}>{firstText}</Typography>
-                                <Typography component='h3'
-                                variant='h3'
-                                className={classes.text}>{secondText}</Typography>
-                            </ThemeProvider>
+            <Grid container className={classes.main}>
+                <Typography variant='h4' component='h4' className={classes.typography}>Case Studies.</Typography>
+                <Grid container md={12} className={classes.firstMain}>
+                    <Grid container md={6} className={classes.firstBox}>
+                        <Typography variant='h4' component='h3'>Design.</Typography>
+                        <Typography component='p'>
+                            Hellohub is an app that connects locals in the social
+                            distancing age and eases the void of social interaction, by enhancing human connection through.
+                     </Typography>
+                        <Typography variant='h6' component='h6' className={classes.challenge}>Challenge:</Typography>
+                    <Typography>Redesign the UI of the HelloHub website and the venue app Interface.</Typography>
+                </Grid>
+                <Grid container md={6} direction='column' className={classes.pictureContainer}>
+                        <img src={hellohub} alt='' className={classes.picture} />
+                        <Grid container className={classes.buttonContainer}>
+                            <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button>
                         </Grid>
-                        <Grid className={classes.buttonContainer}>
-                        <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button>
-                        </Grid>
-                        </Grid>
-                        <Grid
-                            md={6}
-                            sm={6}
-
-                            className={classes.pictureContainer}
-                            direction="column">
-                            <img src={picture} className={classes.picture} />
                     </Grid>
                 </Grid>
-                )
-            })
-        }
-    </Grid>
-    </div>
-    {/* <img src={layers}/> */}
-    {/* </Grid> */}
-</>  
+                <Grid container md={12} className={classes.secondMain}>
+                    <Grid container md={6} direction='column' className={classes.secondPictureContainer}>
+                        <img src={breza} alt='' className={classes.picture} />
+                        <Grid container className={classes.buttonContainer}>
+                            <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button>
+                        </Grid>
+                    </Grid>
+                    <Grid container md={6} className={classes.secondBox}>
+                        <Typography variant='h4' component='h3'>Build.</Typography>
+                        <Typography>
+                            Brezaa is a dating app that uses icebreakers to break the uncomfort of meeting someone first time.
+                            </Typography>
+                    <Typography variant='h6' component='h6' className={classes.challenge}>Challenge:</Typography>
+                            <Typography>Worked on building Brezaa's new Home page for the launch of the new website.</Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <hr />
+        </>
     )
 }

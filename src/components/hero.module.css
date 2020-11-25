@@ -1,13 +1,20 @@
 * { margin:0; padding:0; box-sizing:border-box;}
 
 * html {
-    background-color:#C4C4C4;
+    background-color:white;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .button {
     position: relative;
     width: 100px;
     height: 100px;
+
 }
 
 .blurred {
@@ -27,8 +34,9 @@
     transform: translate(-50%, -50%);
     top: 25%;
     left: 50%;
-    background-color: #EDFF00;
+    background-color:#F9FE12;
     transition: .4s;
+    border-radius: 10px;
 }
 .blurred::after {
     content: "";
@@ -37,7 +45,7 @@
     height: 20px;
     top: 0;
     left: 0;
-    background-color: #EDFF00;
+    background-color: #F9FE12;
     border-radius: 100%;
     transition: .4s;
 }
@@ -47,7 +55,7 @@
    height: 5px;
    top: 0;
    left: 0;
-   background-color: #EDFF00;
+   background-color: #F9FE12;
    border-radius: 100%;
    transition: .2s;
 }
@@ -57,7 +65,7 @@
   height: 5px;
   top: 0;
   left: 0;
-  background-color: #EDFF00;
+  background-color: #F9FE12;
   border-radius: 100%;
   transition: .2s;
 }
@@ -68,7 +76,7 @@
     height: 5px;
     top: 0;
     left: 0;
-    background-color: #EDFF00;
+    background-color: #F9FE12;
     border-radius: 100%;
     transition: .2s;
   }
@@ -79,7 +87,7 @@
     height: 5px;
     top: 0;
     left: 0;
-    background-color: #EDFF00;
+    background-color: #F9FE12;
     border-radius: 100%;
     transition: .2s;
   }
@@ -90,7 +98,7 @@
     height: 5px;
     top: 0;
     left: 0;
-    background-color: #EDFF00;
+    background-color: #F9FE12;
     border-radius: 100%;
     transition: .2s;
   }
@@ -101,7 +109,7 @@
     height: 5px;
     top: 0;
     left: 0;
-    background-color: #EDFF00;
+    background-color: #F9FE12;
     border-radius: 100%;
     transition: .2s;
  }
@@ -155,10 +163,11 @@
 
 .buttonName {
         position: absolute;
-        top: 45%; 
-        left: 70%;
+        top: 35%;
+        left: 83%;
+        font-weight: bold;
         transform: translate(-100%, -100%);
-        font-size: 15px;
+        font-size: 20px;
         z-index: 10;
         color: black;
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
