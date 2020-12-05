@@ -169,8 +169,12 @@ hr {
         transform: translate(-100%, -100%);
         font-size: 20px;
         z-index: 10;
-        color: black;
+        color: #1a2b3d;
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 

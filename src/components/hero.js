@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         zIndex: '2',
         [theme.breakpoints.down('sm')]: {
-            paddingTop:'20px'
+            paddingTop:'100px'
           },
     },
     picture: {
@@ -28,20 +28,20 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const theme = createMuiTheme();
-//passion
-theme.typography.h3 = {
-    fontSize: '3rem',
-    color: 'black',
-    [theme.breakpoints.down('sm')]: {
-        fontSize: '2rem',
-        fontWeight:'bold'
-    },
-    [theme.breakpoints.up('md')]: {
-        color: 'black',
-        fontSize: '5rem',
+// //passion
+// theme.typography.h3 = {
+//     fontSize: '3rem',
+//     color: 'black',
+//     [theme.breakpoints.down('sm')]: {
+//         fontSize: '2rem',
+//         fontWeight:'bold'
+//     },
+//     [theme.breakpoints.up('md')]: {
+//         color: 'black',
+//         fontSize: '5rem',
 
-    },
-};
+//     },
+// };
 
 theme.typography.h2= {
     fontSize: '3rem',
@@ -54,7 +54,7 @@ theme.typography.h2= {
     [theme.breakpoints.up('md')]: {
         color: 'black',
         fontSize: '5rem',
-
+        fontWeight:'bold'
     },
 };
 
@@ -65,11 +65,11 @@ export default function Hero() {
             <Grid container md={12} className={classes.hero} direction='row' sm={12}>
                 <Grid container md={6} direction='column' className={classes.heroText} sm={12}>
                     <ThemeProvider theme={theme}>
-                        <Typography variant='h4' component='h4' className={classes.typography}>We Combine</Typography>
-                        <Typography variant='h2' component='h1' className={classes.typography}>Creativity</Typography>
-                        <Typography variant='h4' component='h4' className={classes.typography}>Technology</Typography>
-                        <Typography variant='h4' component='h4'>&amp;</Typography>
-                        <Typography variant='h3' component='h3'>Passion</Typography>
+                        <Typography variant='h3' component='h4' className={classes.typography}>We Blend</Typography>
+                        <Typography variant='h2' component='h4' className={classes.typography}>Creativity</Typography>
+                        <Typography variant='h3' component='h4' className={classes.typography}>Technology</Typography>
+                        <Typography variant='h4' component='h3'>&amp;</Typography>
+                        <Typography variant='h3' component='h4'>Passion</Typography>
                     </ThemeProvider>
                 </Grid>
                <Grid container md={6}>
@@ -79,12 +79,14 @@ export default function Hero() {
             </Grid>
             <Grid container md={12} className={classes.buttonContainer} direction='column'>
                 <Grid container md={6}>
+                    <a href='#projects'>
                     <div className={styles.button}>
                         <div className={styles.buttonName}>Projects</div>
                         <div className={styles.blurred}>
                             <span></span><span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
+                    </a>
                 </Grid>
                 <Grid container md={6} />
             </Grid>

@@ -15,6 +15,7 @@ const config = {
   paddingToItem: 30,
   paddingToItemSmall: 20,
   lineWidth: 3,
+  
 
   // triangle
   triangleWidth: 0,

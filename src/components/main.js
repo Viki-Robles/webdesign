@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     typography: {
         paddingLeft: '40px',
         fontWeight: 'bold',
+        color:'black'
     },
     firstBox: {
         padding: '10%'
@@ -57,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
     },
     challenge: {
         fontWeight: 'bold'
+    },
+    mainSubtitles: {
+        fontWeight:'bold'
     }
 
 }));
@@ -65,11 +69,13 @@ export default function Main() {
 
     return (
         <>
+        
             <Grid container className={classes.main}>
-                <Typography variant='h4' component='h4' className={classes.typography}>Case Studies.</Typography>
+            <hr />
+                <Typography variant='h4' component='h4' className={classes.typography} id='projects'>Case Studies.</Typography>
                 <Grid container md={12} className={classes.firstMain}>
                     <Grid container md={6} className={classes.firstBox}>
-                        <Typography variant='h3' component='h5'>Design.</Typography>
+                        <Typography variant='h4' component='h5' className={classes.mainSubtitles}>Design.</Typography>
                         <Typography component='p' variant='h6'>
                             Hellohub is an app that connects locals in the social
                             distancing age and eases the void of social interaction, by enhancing human connection through.
@@ -92,7 +98,7 @@ export default function Main() {
                         </Grid>
                     </Grid>
                     <Grid container md={6} className={classes.secondBox}>
-                        <Typography variant='h3' component='h5'>Build.</Typography>
+                        <Typography variant='h4' component='h5' className={classes.mainSubtitles}>Build.</Typography>
                         <Typography component='p' variant='h6'>
                             Brezaa is a dating app that uses icebreakers to break the uncomfort of meeting someone first time.
                             </Typography>
@@ -101,7 +107,7 @@ export default function Main() {
                     </Grid>
                 </Grid>
             </Grid>
-            <hr />
+           
         </>
     )
 }

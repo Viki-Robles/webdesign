@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
   headerTitle: {
     padding:'10px 0 10px 10px',
     fontFamily:'Nova Slim',
-    color:'black'
+    color:'black',
+    fontWeight:'600'
   }
 
 }))
@@ -40,9 +41,9 @@ export default function Header() {
 
   return (
     <Grid container md={12} className={classes.header}>
-      <Grid container md={6} className={classes.headerTitle} xs={6}><Typography variant='h4'>Create.</Typography></Grid>
+      <Grid container md={6} xs={6}><Typography variant='h5' className={classes.headerTitle}>Create.</Typography></Grid>
       <Grid container md={6} justify='flex-end' className={classes.headersubcontainer} xs={6}>
-        <Button variant="contained" color={'primary'} className={classes.headerbutton}>Contact us</Button>
+        <Button variant="contained" color={'primary'} className={classes.headerbutton}><a href='#form'>Contact us</a></Button>
         <img src={menuicon} className={classes.menuicon}/>
       </Grid>
     </Grid>

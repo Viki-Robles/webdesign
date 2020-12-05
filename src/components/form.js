@@ -42,7 +42,7 @@ export default function Form() {
         <>
             <Grid md={12} className={classes.formControl}>
                 <Typography variant='h4' component='h4' className={classes.typography}>Let's work together...</Typography>
-                <form>
+                <form id='form'>
                     <Grid container direction='column' md={3} className={classes.formContainer}>
                         <TextField
                             className={classes.textfield}
