@@ -29,7 +29,7 @@ export default function Footer() {
       <div class="footer-right col-md-4 col-sm-6">
         <p class="menu">
           <a href="#"> Home</a> |
-      <a href="#"> Services</a> |
+      <a href="#services"> Services</a> |
       <a href="#"> Portfolio</a>
         </p>
         <p class="name"> VALARR &copy; 2020</p>

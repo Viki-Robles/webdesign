@@ -73,7 +73,7 @@ export default function Hero() {
                     </ThemeProvider>
                 </Grid>
                <Grid container md={6}>
-                    <img src={brain} className={classes.picture}/>
+                    <img src={brain} className={classes.picture} alt=''/>
                </Grid>
 
             </Grid>
