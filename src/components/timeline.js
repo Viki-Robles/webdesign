@@ -9,13 +9,13 @@ export class Timeline extends React.Component {
     super(props)
     this.state = { twoSided: true }
     this.onTwoSidedChange = this.onTwoSidedChange.bind(this)
-    this.componentWillReceiveProps(props)
+    this.componentDidUpdate(props)
   }
 
   /**
    * Merge config with default only once (optimize)
    */
-  componentWillReceiveProps(newProps) {
+  componentDidUpdate(newProps) {
     //eslint-disable-next-line no-unused-vars
     const { children, ...config } = newProps // children are not config
     this.mergedConfig = {
@@ -24,9 +24,11 @@ export class Timeline extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+
     const { mediaWidthSmall } = this.mergedConfig
-    if (window && window.matchMedia) {
+    
+    if (typeof window !== 'undefined') {
       this.mqTwoSided = window.matchMedia(`(min-width: ${mediaWidthSmall}px)`)
       this.mqTwoSided.addListener(this.onTwoSidedChange)
       this.onTwoSidedChange(this.mqTwoSided)
