@@ -149,7 +149,7 @@ const NavBar = () => {
         <CssBaseline />
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
-            <Grid item className={classes.navBar} md={12}>
+            <Grid container className={classes.navBar} md={12}>
                 <Box>
               {/* <img
                 onClick={() => props.history.push('/home')}
