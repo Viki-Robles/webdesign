@@ -1,8 +1,9 @@
 import { TextField, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
+import { FormatShapesTwoTone } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     formContainer: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     formControl: {
         backgroundColor: 'yellow',
         paddingTop: '100px',
-        marginTop:'200px'
+        marginTop: '200px'
     },
     textfield: {
         padding: '10px',
@@ -30,48 +31,65 @@ const useStyles = makeStyles((theme) => ({
 
     },
     typography: {
-        padding:'20px',
+        padding: '20px',
 
     }
 }))
 
 export default function Form() {
     const classes = useStyles();
+    const [formState, setFormState] = useState({ name: '', email: '' })
+
+    const handleChange = (e) => {
+        setFormState({
+            ...formState,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = e => {
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...formState })
+        })
+            .then(() => alert("Success!"))
+            .catch(error => alert(error));
+
+        e.preventDefault();
+    };
+
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
 
     return (
         <>
-            <Grid md={12} className={classes.formControl}>
-                <Typography variant='h4' component='h4' className={classes.typography}>Let's work together...</Typography>
-                <form id='form' 
-                method='post' 
-                name='contact' 
-                data-netlify='true'
-                data-netlify-honeypot='bot-field'>
-                    <Grid container direction='column' md={3} className={classes.formContainer}>
-                        <TextField
-                            className={classes.textfield}
-                            id="firstName"
-                            label="First Name"
-                            variant="outlined"
-                            color={'primary'}>Name</TextField>
-                        <TextField
-                            className={classes.textfield}
-                            id="lastName"
-                            label="Last Name"
-                            variant="outlined"
-
-                        >Last Name</TextField>
-                        <TextField id="email"
-                            className={classes.textfield}
-                            label="Email"
-                            variant="outlined"
-                            color={'primary'}>Email</TextField>
-                    </Grid>
-                </form>
-            </Grid>
-            <Grid container className={classes.buttonContainer}>
-                <Button variant="contained" color={'primary'} className={classes.button} type='submit'>Send</Button>
-            </Grid>
+            <form
+                onSubmit={handleSubmit}
+                method="post"
+                name="contact"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <input
+                    type='email'
+                    placeholder='Email'
+                    id='email'
+                    name='email'
+                    onChange={handleChange}
+                    value={formState.email} />
+                <input
+                    type='text'
+                    name='name'
+                    placeholder='Leave your message here'
+                    id='name'
+                    onChange={handleChange}
+                    value={formState.name} />
+                <button type='submit'>Send</button>
+            </form>
         </>
     )
 }
