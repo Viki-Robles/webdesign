@@ -42,7 +42,11 @@ export default function Form() {
         <>
             <Grid md={12} className={classes.formControl}>
                 <Typography variant='h4' component='h4' className={classes.typography}>Let's work together...</Typography>
-                <form id='form'>
+                <form id='form' 
+                method='post' 
+                name='contact' 
+                data-netlify='true'
+                data-netlify-honeypot='bot-field'>
                     <Grid container direction='column' md={3} className={classes.formContainer}>
                         <TextField
                             className={classes.textfield}
