@@ -86,7 +86,7 @@ export default function Form() {
                     </Grid>
                 </Grid>
                 <Grid container className={classes.button}>
-                <Button variant="outlined" color="primary">Submit</Button>
+                <Button variant="outlined" color="primary" type='submit'>Submit</Button>
                 </Grid>
             </form>
             </Grid>
