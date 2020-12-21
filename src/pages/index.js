@@ -13,8 +13,9 @@ const IndexPage = () => (
 <Layout>
     <NavBar/>
     <Hero/>
-    <Timeline/>
+   
     <Main/>
+    <Timeline/>
     <Form/>
     <Footer/>
     </Layout>
