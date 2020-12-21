@@ -1,38 +1,23 @@
-import { TextField, Typography } from "@material-ui/core";
 import React, { useState } from "react";
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-import { FormatShapesTwoTone } from "@material-ui/icons";
+import { Input } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-    formContainer: {
-        margin: '0 auto'
-    },
-    formControl: {
-        backgroundColor: 'yellow',
-        paddingTop: '100px',
-        marginTop: '200px'
-    },
-    textfield: {
-        padding: '10px',
-        color: 'white'
+const useStyles = makeStyles(() => ({
+    input: {
+        width: '400px',
+        marginBottom: '40px',
+        
     },
     button: {
-        color: 'white',
-        backgroundColor: 'black',
-        textTransform: 'none',
-        margin: '0 auto'
-    },
-    buttonContainer: {
-        textAlign: 'center',
-        backgroundColor: 'yellow',
-        paddingBottom: '100px'
-
+        justifyContent:'center',
+        marginBottom:'40px',
     },
     typography: {
-        padding: '20px',
-
+        marginTop:'100px',
+        justifyContent:'center',
+        marginBottom:'40px'
     }
 }))
 
@@ -67,30 +52,45 @@ export default function Form() {
 
     return (
         <>
+        <Grid>
+            <Grid container className={classes.typography}>
+            <Typography variant='h5' component='h5'>Let's work together!</Typography>
+            </Grid>
             <form
                 onSubmit={handleSubmit}
                 method="post"
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact" />
-                <Textfield
-                    type='email'
-                    placeholder='Email'
-                    id='email'
-                    name='email'
-                    onChange={handleChange}
-                    value={formState.email} />
-                <TextField
-                    type='text'
-                    name='name'
-                    placeholder='Leave your message here'
-                    id='name'
-                    onChange={handleChange}
-                    value={formState.name}/>
-                <button type='submit'>Send</button>
+                <Grid container direction='column' className={classes.container} alignItems='center'>
+                    <Grid xs={12} lg={12}>
+                        <Input
+                            type='email'
+                            placeholder='Email'
+                            id='email'
+                            name='email'
+                            fullWidth
+                            onChange={handleChange}
+                            value={formState.email}
+                            className={classes.input} />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Input
+                            type='text'
+                            name='name'
+                            className={classes.input}
+                            placeholder='Message'
+                            id='name'
+                            onChange={handleChange}
+                            value={formState.name} />
+                    </Grid>
+                </Grid>
+                <Grid container className={classes.button}>
+                <Button variant="outlined" color="primary">Submit</Button>
+                </Grid>
             </form>
+            </Grid>
         </>
-    )
+    );
 }
 
