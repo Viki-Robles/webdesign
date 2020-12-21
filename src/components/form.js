@@ -74,20 +74,20 @@ export default function Form() {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact" />
-                <input
+                <Textfield
                     type='email'
                     placeholder='Email'
                     id='email'
                     name='email'
                     onChange={handleChange}
                     value={formState.email} />
-                <input
+                <TextField
                     type='text'
                     name='name'
                     placeholder='Leave your message here'
                     id='name'
                     onChange={handleChange}
-                    value={formState.name} />
+                    value={formState.name}/>
                 <button type='submit'>Send</button>
             </form>
         </>
