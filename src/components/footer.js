@@ -32,7 +32,7 @@ export default function Footer() {
       <a href="#services"> Services</a> |
       <a href="#"> Portfolio</a>
         </p>
-        <p className="name"> VALARR &copy; 2020</p>
+        <p className="name"> Create &copy; 2020</p>
       </div>
     </footer>
   )

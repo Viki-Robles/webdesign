@@ -18,6 +18,10 @@ const useStyles = makeStyles(() => ({
         marginTop:'100px',
         justifyContent:'center',
         marginBottom:'40px'
+    },
+    formTitle :{
+        fontWeight: 'bold',
+        color:'black'
     }
 }))
 
@@ -54,7 +58,7 @@ export default function Form() {
         <>
         <Grid>
             <Grid container className={classes.typography}>
-            <Typography variant='h5' component='h5'>Let's work together!</Typography>
+            <Typography variant='h5' component='h5' className={classes.formTitle}>Let's work together...</Typography>
             </Grid>
             <form
                 onSubmit={handleSubmit}
