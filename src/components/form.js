@@ -6,13 +6,19 @@ import { Input } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
     input: {
-        width: '400px',
+        width: '250px',
         marginBottom: '40px',
         
     },
-    button: {
+    buttonContainer: {
         justifyContent:'center',
         marginBottom:'40px',
+    },
+    button:{
+        textTransform:'none',
+        color:'white',
+        backgroundColor:'black'
+
     },
     typography: {
         marginTop:'100px',
@@ -22,6 +28,14 @@ const useStyles = makeStyles(() => ({
     formTitle :{
         fontWeight: 'bold',
         color:'black'
+    },
+    formBox:{
+        width:'40%',
+        margin:'0 auto',
+        border:'3px solid #242424',
+        borderRadius:'50% 50% 0 0',
+        marginTop:'80px',
+        backgroundColor:'yellow'
     }
 }))
 
@@ -56,7 +70,7 @@ export default function Form() {
 
     return (
         <>
-        <Grid>
+        <Grid className={classes.formBox}>
             <Grid container className={classes.typography}>
             <Typography variant='h5' component='h5' className={classes.formTitle}>Let's work together...</Typography>
             </Grid>
@@ -67,7 +81,7 @@ export default function Form() {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field">
                 <Grid container direction='column' className={classes.container} alignItems='center'>
-                    <Grid xs={12} lg={12}>
+                    <Grid sm={12} lg={12}>
                         <Input
                             type='email'
                             placeholder='Email'
@@ -89,8 +103,8 @@ export default function Form() {
                             value={formState.name} />
                     </Grid>
                 </Grid>
-                <Grid container className={classes.button}>
-                <Button variant="outlined" color="primary" type='submit'>Submit</Button>
+                <Grid container className={classes.buttonContainer}>
+                <Button variant="outlined" color={"primary"} type='submit' className={classes.button}>Submit</Button>
                 </Grid>
             </form>
             </Grid>

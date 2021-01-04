@@ -65,11 +65,11 @@ export default function Hero() {
             <Grid container md={12} className={classes.hero} direction='row' sm={12}>
                 <Grid container md={6} direction='column' className={classes.heroText} sm={12}>
                     <ThemeProvider theme={theme}>
-                        <Typography variant='h3' component='h4' className={classes.typography}>We Blend</Typography>
-                        <Typography variant='h2' component='h4' className={classes.typography}>Creativity</Typography>
-                        <Typography variant='h3' component='h4' className={classes.typography}>Technology</Typography>
-                        <Typography variant='h4' component='h3'>&amp;</Typography>
-                        <Typography variant='h3' component='h4'>Passion</Typography>
+                        <Typography variant='h1' className={classes.typography}>We Blend</Typography>
+                        <Typography variant='h2'  className={classes.typography}>Creativity</Typography>
+                        <Typography variant='h3'  className={classes.typography}>Technology</Typography>
+                        <Typography variant='h3' className={classes.typography}>&amp;</Typography>
+                        <Typography variant='h3' className={classes.typography}>Passion</Typography>
                     </ThemeProvider>
                 </Grid>
                <Grid container md={6}>
