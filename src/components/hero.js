@@ -4,18 +4,22 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './hero.module.css';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import brain from '../images/brainpicture.png';
+import hand from '../images/hand.png';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
-        backgroundColor: 'white',
+        backgroundColor: '#F9FE12',
+        paddingTop:'10%'
+
     },
     heroText: {
         textAlign: 'center',
         justifyContent: 'center',
         zIndex: '2',
         [theme.breakpoints.down('sm')]: {
-            paddingTop:'100px'
-          },
+            paddingTop: '100px',
+
+        },
     },
     picture: {
         width: '100%'
@@ -23,74 +27,80 @@ const useStyles = makeStyles((theme) => ({
     buttonContainer: {
         backgroundColor: 'white',
         paddingLeft: '80px',
+    },
+    picureBox:{
+        position:'relative',
+        justifyContent:'center'
+    },
+    becreative:{
+        fontWeight:'bold'
+    },
+    becreativeBox:{
+        position:'absolute',
+        paddingLeft:'20px',
+        marginTop:'15%'
+    },
+    beyouBox:{
+        paddingRight:'20px',
+        justifyContent:'flex-end'
+    },
+    beyou:{
+        fontWeight:600
     }
 
 }))
 
 const theme = createMuiTheme();
-// //passion
-// theme.typography.h3 = {
-//     fontSize: '3rem',
-//     color: 'black',
-//     [theme.breakpoints.down('sm')]: {
-//         fontSize: '2rem',
-//         fontWeight:'bold'
-//     },
-//     [theme.breakpoints.up('md')]: {
-//         color: 'black',
-//         fontSize: '5rem',
 
-//     },
-// };
-
-theme.typography.h2= {
+theme.typography.h2 = {
     fontSize: '3rem',
-    textDecoration:'line-through',
-    textDecorationColor:'yellow',
+    textDecoration: 'line-through',
+    textDecorationColor: 'yellow',
     [theme.breakpoints.down('sm')]: {
         fontSize: '3rem',
-        fontWeight:'bold'
+        fontWeight: 'bold'
     },
     [theme.breakpoints.up('md')]: {
         color: 'black',
         fontSize: '5rem',
-        fontWeight:'bold'
-    },
+        fontWeight: 'bold'
+    }
 };
 
 export default function Hero() {
     const classes = useStyles();
+
+
     return (
         <>
-            <Grid container md={12} className={classes.hero} direction='row' sm={12}>
-                <Grid container md={6} direction='column' className={classes.heroText} sm={12}>
-                    <ThemeProvider theme={theme}>
-                        <Typography variant='h1' className={classes.typography}>We Blend</Typography>
-                        <Typography variant='h2'  className={classes.typography}>Creativity</Typography>
-                        <Typography variant='h3'  className={classes.typography}>Technology</Typography>
-                        <Typography variant='h3' className={classes.typography}>&amp;</Typography>
-                        <Typography variant='h3' className={classes.typography}>Passion</Typography>
-                    </ThemeProvider>
+            <Grid container className={classes.hero}>
+                <Grid container direction='column' className={classes.becreativeBox}>
+                    <Typography variant='h1'  className={classes.becreative}>Be</Typography>
+                    <Typography variant='h1' className={classes.becreative}>Creative.</Typography>
                 </Grid>
-               <Grid container md={6}>
-                    <img src={brain} className={classes.picture} alt=''/>
-               </Grid>
-
+                <Grid container className={classes.pictureBox}>
+                <img src={hand} alt='' className={classes.picture}/>
+                </Grid>
+                <Grid container className={classes.beyouBox}>
+                    <Typography variant='h1' className={classes.beyou}>Be You.</Typography>
+                </Grid>
+                
             </Grid>
-            <Grid container md={12} className={classes.buttonContainer} direction='column'>
-                <Grid container md={6}>
+
+
+
+            {/* <Grid container md={12} className={classes.buttonContainer} direction='column'>
+                <Grid>
                     <a href='#projects'>
-                    <div className={styles.button}>
-                        <div className={styles.buttonName}>Projects</div>
-                        <div className={styles.blurred}>
-                            <span></span><span></span><span></span><span></span><span></span><span></span>
+                        <div className={styles.button}>
+                            <div className={styles.buttonName}>Projects</div>
+                            <div className={styles.blurred}>
+                                <span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
                         </div>
-                    </div>
                     </a>
                 </Grid>
-                <Grid container md={6} />
-            </Grid>
-            <hr/>
+            </Grid> */}
         </>
     )
 }

@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     height: '10vh',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#F9FE12',
     color: '#000',
     [theme.breakpoints.down('xs')]: {
       height: '9vh',
@@ -158,7 +158,7 @@ const NavBar = () => {
                 alt='HelloHub Logo'
                 className={classes.logo}
               /> */}
-              <Typography variant='h5' className={classes.headerTitle}>Create.</Typography>
+              <Typography variant='h5' className={classes.headerTitle}>BeYou.</Typography>
               </Box>
                 <Hidden smDown>
                   {drawerLinks.map(

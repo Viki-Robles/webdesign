@@ -9,17 +9,16 @@ import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 
 const IndexPage = () => (
- <>
-<Layout>
-    <NavBar/>
-    <Hero/>
-   
-    <Main/>
-    <Timeline/>
-    <Form/>
-    <Footer/>
-    </Layout>
-</>
+    <>
+     
+            <NavBar />
+            <Hero />
+            <Main />
+            <Timeline />
+            <Form />
+            <Footer />
+
+    </>
 )
 
 export default IndexPage
