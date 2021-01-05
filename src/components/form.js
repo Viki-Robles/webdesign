@@ -30,12 +30,15 @@ const useStyles = makeStyles(() => ({
         color:'black'
     },
     formBox:{
-        width:'40%',
+        width:'100%',
         margin:'0 auto',
         border:'3px solid #242424',
         borderRadius:'50% 50% 0 0',
         marginTop:'80px',
-        backgroundColor:'yellow'
+        backgroundColor:'yellow',
+        [theme.breakpoints.up('md')]: {
+            width:'70%'
+        }
     }
 }))
 

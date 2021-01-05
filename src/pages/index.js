@@ -10,14 +10,13 @@ import Footer from '../components/footer';
 
 const IndexPage = () => (
     <>
-     
+ 
             <NavBar />
             <Hero />
             <Main />
             <Timeline />
             <Form />
             <Footer />
-
     </>
 )
 

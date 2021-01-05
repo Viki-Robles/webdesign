@@ -9,8 +9,10 @@ import hand from '../images/hand.png';
 const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundColor: '#F9FE12',
-        paddingTop:'10%'
-
+        paddingTop:'10%',
+        [theme.breakpoints.down('sm')]:{
+            display:'inherit'
+        }
     },
     heroText: {
         textAlign: 'center',
@@ -22,7 +24,14 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     picture: {
-        width: '100%'
+        width: '80%',
+        margin:'auto',
+        [theme.breakpoints.down('sm')]:{
+            margintop:'70%'
+        },
+        [theme.breakpoints.up('md')]: {
+            margintop:'0'
+        }
     },
     buttonContainer: {
         backgroundColor: 'white',
@@ -36,9 +45,11 @@ const useStyles = makeStyles((theme) => ({
         fontWeight:'bold'
     },
     becreativeBox:{
-        position:'absolute',
         paddingLeft:'20px',
-        marginTop:'15%'
+        marginTop:'15%',
+        [theme.breakpoints.up('md')]:{
+            marginTop:'0',
+        }
     },
     beyouBox:{
         paddingRight:'20px',
@@ -73,7 +84,7 @@ export default function Hero() {
 
     return (
         <>
-            <Grid container className={classes.hero}>
+            <Grid container className={classes.hero} md={12} sm={12} xs={12}>
                 <Grid container direction='column' className={classes.becreativeBox}>
                     <Typography variant='h1'  className={classes.becreative}>Be</Typography>
                     <Typography variant='h1' className={classes.becreative}>Creative.</Typography>

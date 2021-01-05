@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#000',
     [theme.breakpoints.down('xs')]: {
       height: '9vh',
-      backgroundColor: '#fff',
+      backgroundColor: '#F9FE12',
     },
   },
   menuButton: {
@@ -62,14 +62,19 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: 220,
-    backgroundColor: 'yellow'
+    backgroundColor: 'black',
+    
   },
   navLink: {
     color: `black`,
     paddingRight: 40,
     fontSize: '2rem',
     textDecoration:'none',
-    fontWeight:'600'
+    fontWeight:'600',
+    [theme.breakpoints.down('sm')]: {
+      color:'#F9FE12',
+      fontWeight:'600'
+    }
   },
   linkButton: {
   padding:'8px 20px 8px 20px',
@@ -111,6 +116,7 @@ signUpLink:{
   closeMenuButton: {
     marginRight: 'auto',
     marginLeft: 0,
+    color: '#F9FE12'
   },
   headerTitle: {
     paddingRight: 40
@@ -165,7 +171,7 @@ const NavBar = () => {
                     (link, i) =>
                       i !== drawerLinks.length + 1 && (
                         <Link key={i} href={link.href} target='_blank' className={classes.navLink}>
-                            <Typography>{link.text}</Typography>
+                            <Typography variant='h6'>{link.text}</Typography>
                         </Link>
                       )
                   )}
