@@ -84,7 +84,7 @@ export default function Main() {
                             </div>
                         </div>
                         <Grid container className={classes.secondButtonContainer}>
-                            <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button>
+                            {/* <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button> */}
                         </Grid>
                     </Grid>
                 </Grid>
@@ -99,7 +99,7 @@ export default function Main() {
                             </div>
                         </div>
                         <Grid container className={classes.buttonContainer}>
-                            <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button>
+                            {/* <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button> */}
                         </Grid>
                     </Grid>
                     <Grid container md={6} className={classes.secondBox} sm={12}>
