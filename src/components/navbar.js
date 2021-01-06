@@ -14,7 +14,7 @@ import { Grid, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-
+import polygon from '../images/polygon.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   navBar: {
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    paddingTop: '40px',
     [theme.breakpoints.down('xs')]: {
-      justifyContent: 'space-between',
+      // justifyContent: 'space-between',
     },
   },
   drawer: {
@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: 220,
     backgroundColor: 'black',
+    paddingTop:'30px',
     
   },
   navLink: {
@@ -119,7 +120,11 @@ signUpLink:{
     color: '#F9FE12'
   },
   headerTitle: {
-    paddingRight: 40
+    paddingRight: 40,
+    fontWeight:600
+  },
+  containerLogo:{
+    paddingRight:'5px'
   }
 })); // NavBar
 const NavBar = () => {
@@ -156,6 +161,9 @@ const NavBar = () => {
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
             <Grid container className={classes.navBar} md={12}>
+              <Box className={classes.containerLogo}>
+              <img src={polygon} alt=''/>
+              </Box>
                 <Box>
               {/* <img
                 onClick={() => props.history.push('/home')}
@@ -164,7 +172,7 @@ const NavBar = () => {
                 alt='HelloHub Logo'
                 className={classes.logo}
               /> */}
-              <Typography variant='h5' className={classes.headerTitle}>BeYou.</Typography>
+              <Typography variant='h5' className={classes.headerTitle}>WeWonder.</Typography>
               </Box>
                 <Hidden smDown>
                   {drawerLinks.map(

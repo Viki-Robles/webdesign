@@ -8,7 +8,10 @@ const useStyles = makeStyles((theme) => ({
     title: {
         paddingLeft: '40px',
         fontWeight: 'bold',
-        color: 'black'
+        color: 'black',
+        marginTop:'8%',
+        marginBottom:'5%'
+
     },
     box: {
         [theme.breakpoints.down('sm')]: {

@@ -3,7 +3,6 @@ import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './hero.module.css';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import brain from '../images/brainpicture.png';
 import hand from '../images/handpicture.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft:'20px',
         marginTop:'15%',
         [theme.breakpoints.up('md')]:{
-            marginTop:'0',
+            marginTop:'5%',
         }
     },
     beyouBox:{
