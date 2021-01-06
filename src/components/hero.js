@@ -9,6 +9,7 @@ import hand from '../images/handpicture.png';
 const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundColor: '#F9FE12',
+        borderRadius: '0 0 40% 50%',
         paddingTop:'10%',
         [theme.breakpoints.down('sm')]:{
             display:'inherit'

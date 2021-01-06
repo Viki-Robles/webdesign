@@ -75,8 +75,8 @@ export default function Main() {
                         <Typography component='p' variant='h6'>Redesign the UI of the HelloHub website and the venue app Interface.</Typography>
                     </Grid>
                     <Grid container md={6} direction='column' className={classes.secondBoxContainer} sm={12}>
-                        <div className='wrapper'>
-                            <div className='card'>
+                        <div className='projectsWrapper'>
+                            <div className='projectsCard'>
                                 <img src={hellohub} />
                                 <div className='info'>
                                     <h1>HelloHub</h1>
@@ -90,8 +90,8 @@ export default function Main() {
                 </Grid>
                 <Grid container md={12} className={classes.secondMain} sm={12}>
                     <Grid container md={6} direction='column' className={classes.secondPictureContainer} sm={12}>
-                        <div className='wrapper'>
-                            <div className='card'>
+                        <div className='projectsWrapper'>
+                            <div className='projectsCard'>
                                 <img src={breza} />
                                 <div className='info'>
                                     <h1>Brezaa Dating</h1>
@@ -112,7 +112,6 @@ export default function Main() {
                     </Grid>
                 </Grid>
             </Grid>
-            <hr />
         </>
     )
 }
