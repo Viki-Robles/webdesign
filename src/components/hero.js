@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import styles from './hero.module.css';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import brain from '../images/brainpicture.png';
-import hand from '../images/hand.png';
+import hand from '../images/handpicture.png';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
