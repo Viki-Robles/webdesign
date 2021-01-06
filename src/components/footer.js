@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
         padding: '8rem 8%',
         backgroundColor:'rgb(36, 36, 36)',
         color:'white',
-        position:'absolute',
         marginTop:'-15px'
     },
     address:{
