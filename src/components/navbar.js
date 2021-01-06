@@ -180,7 +180,7 @@ const NavBar = () => {
             <Grid container md={6} justify="flex-end" display="contents">
             <Box className={classes.purpleButton}>
                   <Link
-                    href='/'
+                    href='https://meetings.hubspot.com/vasiliki-robles'
                     target='_blank'
                     className={classes.signUpLink}
                     style={{ textDecoration: 'none' }}>
