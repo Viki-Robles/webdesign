@@ -4,10 +4,10 @@
     background-color:white;
 }
 
-.gatsby {
-    overflow:hidden;
-
+* body {
+    display: inline-block;
 }
+
 
 hr {
     border: 0;
