@@ -14,7 +14,7 @@ import { Grid, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-import polygon from '../images/polygon.svg';
+import logo from '../images/logo2.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '2rem',
     textDecoration:'none',
     fontWeight:'600',
+    paddingTop:'15px',
     [theme.breakpoints.down('sm')]: {
       color:'#F9FE12',
       fontWeight:'600'
@@ -125,6 +126,19 @@ signUpLink:{
   },
   containerLogo:{
     paddingRight:'5px'
+  },
+  logo:{
+    
+    marginRight:'15px',
+    [theme.breakpoints.down('sm')]:{
+      width:'60%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width:'40%'
+    }
+  },
+  closeMenuButton:{
+    fontSize:'3rem'
   }
 })); // NavBar
 const NavBar = () => {
@@ -161,19 +175,9 @@ const NavBar = () => {
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
             <Grid container className={classes.navBar} md={12}>
-              <Box className={classes.containerLogo}>
-              <img src={polygon} alt=''/>
-              </Box>
-                <Box>
-              {/* <img
-                onClick={() => props.history.push('/home')}
-                style={{ height: 'auto', cursor: 'pointer', marginRight:'50px' }}
-                src={require('./logo.svg')}
-                alt='HelloHub Logo'
-                className={classes.logo}
-              /> */}
-              <Typography variant='h5' className={classes.headerTitle}>WeWonder.</Typography>
-              </Box>
+            <Box display='flex'>
+                  <img style={{ height: 'auto' }} src={logo} alt='logo' className={classes.logo} />
+         
                 <Hidden smDown>
                   {drawerLinks.map(
                     (link, i) =>
@@ -184,6 +188,7 @@ const NavBar = () => {
                       )
                   )}
                 </Hidden>
+                </Box>
             </Grid>
             <Grid container md={6} justify="flex-end" display="contents">
             <Box className={classes.purpleButton}>
@@ -220,7 +225,7 @@ const NavBar = () => {
             }}
             // Better open performance on mobile. >
             ModalProps={{ keepMounted: true }}>
-            <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
+            <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton} size={'large'}>
               <CloseIcon />
             </IconButton>
             {drawer}

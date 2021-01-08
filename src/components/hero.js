@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect  } from "react";
 import { Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './hero.module.css';
@@ -9,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
     hero: {
         backgroundColor: '#F9FE12',
         borderRadius: '0 0 40% 50%',
-        paddingTop:'10%',
-        [theme.breakpoints.down('sm')]:{
-            display:'inherit'
+        paddingTop: '10%',
+        [theme.breakpoints.down('sm')]: {
+            display: 'inherit'
         }
     },
     heroText: {
@@ -25,38 +25,38 @@ const useStyles = makeStyles((theme) => ({
     },
     picture: {
         width: '100%',
-        margin:'auto',
-        [theme.breakpoints.down('sm')]:{
-            margintop:'70%'
+        margin: 'auto',
+        [theme.breakpoints.down('sm')]: {
+            margintop: '70%'
         },
         [theme.breakpoints.up('md')]: {
-            margintop:'0'
+            margintop: '0'
         }
     },
     buttonContainer: {
         backgroundColor: 'white',
         paddingLeft: '80px',
     },
-    picureBox:{
-        position:'relative',
-        justifyContent:'center'
+    picureBox: {
+        position: 'relative',
+        justifyContent: 'center'
     },
-    becreative:{
-        fontWeight:'bold'
+    becreative: {
+        fontWeight: 'bold'
     },
-    becreativeBox:{
-        paddingLeft:'20px',
-        marginTop:'15%',
-        [theme.breakpoints.up('md')]:{
-            marginTop:'5%',
+    becreativeBox: {
+        paddingLeft: '20px',
+        marginTop: '15%',
+        [theme.breakpoints.up('md')]: {
+            marginTop: '5%',
         }
     },
-    beyouBox:{
-        paddingRight:'20px',
-        justifyContent:'flex-end'
+    beyouBox: {
+        paddingRight: '20px',
+        justifyContent: 'flex-end'
     },
-    beyou:{
-        fontWeight:600
+    beyou: {
+        fontWeight: 600
     }
 
 }))
@@ -80,38 +80,30 @@ theme.typography.h2 = {
 
 export default function Hero() {
     const classes = useStyles();
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
 
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
 
     return (
         <>
             <Grid container className={classes.hero} md={12} sm={12} xs={12}>
-                <Grid container direction='column' className={classes.becreativeBox}>
-                    <Typography variant='h1'  className={classes.becreative}>Be</Typography>
+                <Grid container direction='column' className={classes.becreativeBox} 
+                style={{ transform: `translateY(-${offsetY * 0.5}px)` }}>
+                    <Typography variant='h1' className={classes.becreative}>Be</Typography>
                     <Typography variant='h1' className={classes.becreative}>Creative.</Typography>
                 </Grid>
-                <Grid container className={classes.pictureBox}>
-                <img src={hand} alt='' className={classes.picture}/>
+                <Grid container className={classes.pictureBox} style={{ transform: `translateY(${offsetY * 0.3}px)` }}>
+                    <img src={hand} alt='' className={classes.picture} />
                 </Grid>
                 <Grid container className={classes.beyouBox}>
                     <Typography variant='h1' className={classes.beyou}>Be You.</Typography>
                 </Grid>
-                
             </Grid>
-
-
-
-            {/* <Grid container md={12} className={classes.buttonContainer} direction='column'>
-                <Grid>
-                    <a href='#projects'>
-                        <div className={styles.button}>
-                            <div className={styles.buttonName}>Projects</div>
-                            <div className={styles.blurred}>
-                                <span></span><span></span><span></span><span></span><span></span><span></span>
-                            </div>
-                        </div>
-                    </a>
-                </Grid>
-            </Grid> */}
         </>
     )
 }

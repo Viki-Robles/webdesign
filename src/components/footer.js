@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button"
 import { Grid, Typography } from '@material-ui/core';
+import logo from '../images/logo2.svg'
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -23,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     },
     list: {
         marginTop:'40px'
+    },
+    logoFooter : {
+        width:'20%'
     }
 
 }))
@@ -34,10 +38,7 @@ export default function Footer() {
     return(
         <Grid container md={12} className={classes.footer}>
             <Grid container md={6} direction='column' className={classes.list}>
-            <Typography variant='h6' className={classes.typography}>Home</Typography>
-            <Typography variant='h6' className={classes.typography}>Work</Typography>
-            <Typography variant='h6' className={classes.typography}>Blog</Typography>
-            <Typography variant='h6' className={classes.typography}>Contact</Typography>
+            <img src={logo} className={classes.logoFooter}/>
             </Grid>
             <Grid container md={6} direction='column' className={classes.address}>
                 <Grid container direction='column'>

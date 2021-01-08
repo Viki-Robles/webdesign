@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button"
 import { Grid, Typography } from '@material-ui/core';
@@ -57,6 +57,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Main() {
     const classes = useStyles();
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
 
     return (
         <>
@@ -65,7 +73,7 @@ export default function Main() {
                 <hr />
                 <Typography variant='h4' component='h4' className={classes.typography} id='projects'>Case Studies.</Typography>
                 <Grid container md={12} className={classes.firstMain} sm={12}>
-                    <Grid container md={6} className={classes.firstBox} sm={12}>
+                    <Grid container md={6} className={classes.firstBox} sm={12} style={{ transform: `translateY(${offsetY * 0.06}px)` }}>
                         <Typography variant='h4' component='h5' className={classes.mainSubtitles} md={6} sm={12}>Design.</Typography>
                         <Typography component='p' variant='h6'>
                             Hellohub is an app that connects locals in the social
