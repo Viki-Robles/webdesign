@@ -53,6 +53,36 @@ const useStyles = makeStyles((theme) => ({
     },
     mainSubtitles: {
         fontWeight: 'bold'
+    },
+    introduction:{
+    marginTop: '40%',
+    padding: '40px',
+    textAlign: 'center',
+    fontSize: '3rem',
+    fontWeight:'500'
+    },
+    containers:{
+        padding:'1%'
+    },
+    firstTextContainer:{
+        width: '50%',
+        paddingLeft:'20px',
+        marginTop:'10%'
+    },
+    firstText:{
+        fontSize: '1.5rem',
+        lineHeight: '1.4',
+        fontWeight: 600,
+    },
+    secondText:{
+        paddingLeft: '50%',
+        paddingRight:'20px',
+        color: '#6e7b8c',
+        fontSize: '1.5rem',
+        lineHeight: '1.4'
+    },
+    moto: {
+        margin:'0 auto'
     }
 }));
 export default function Main() {
@@ -68,9 +98,24 @@ export default function Main() {
 
     return (
         <>
-
+            <Grid container md={6} justify='center' className={classes.moto}>
+            <Typography className={classes.introduction}>Hi, we’re Pringe, a web development agency based in London.</Typography>
+            </Grid>
+                {/* <Grid container md={6} className={classes.firstTextContainer}>
+                    <Typography className={classes.firstText}>
+                    We don't just build websites that look good.
+                    </Typography>
+                    <Typography className={classes.firstText}>We build websites that Sale.</Typography>
+                </Grid> */}
+                {/* <Grid container md={12} justify='flex-start' className={classes.secondText}>
+                    <Typography>
+                    We’re meticulous about the process before we start the design. 
+                    When you trust us with your website, we make sure everything we build adds value to your customers, 
+                    fits seamlessly into your existing processes and looks beautiful.
+                    </Typography>
+                </Grid> */}
             <Grid container className={classes.main} sm={12} md={12}>
-                <hr />
+              
                 <Typography variant='h4' component='h4' className={classes.typography} id='projects'>Case Studies.</Typography>
                 <Grid container md={12} className={classes.firstMain} sm={12}>
                     <Grid container md={6} className={classes.firstBox} sm={12}>
@@ -91,9 +136,7 @@ export default function Main() {
                                 </div>
                             </div>
                         </div>
-                        <Grid container className={classes.secondButtonContainer}>
-                            {/* <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button> */}
-                        </Grid>
+    
                     </Grid>
                 </Grid>
                 <Grid container md={12} className={classes.secondMain} sm={12}>
@@ -106,9 +149,7 @@ export default function Main() {
                                 </div>
                             </div>
                         </div>
-                        <Grid container className={classes.buttonContainer}>
-                            {/* <Button variant="contained" color={'primary'} className={classes.button}>Visit Site</Button> */}
-                        </Grid>
+                        
                     </Grid>
                     <Grid container md={6} className={classes.secondBox} sm={12}>
                         <Typography variant='h4' component='h5' className={classes.mainSubtitles}>Build.</Typography>

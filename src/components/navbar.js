@@ -103,7 +103,7 @@ signUpLink:{
     alignItems: 'right',
     justifyContent: 'center',
     borderRadius: '4em',
-    padding: '10px 15px',
+    padding: '10px 10px',
     textDecoration: 'none',
     fontWeight:'bold'
   },
@@ -164,7 +164,6 @@ const NavBar = () => {
     { text: 'HOME', href: '/' },
     { text: 'SERVICES', href: '' },
     { text: 'WORK', href: '#projects' },
-    { text: 'TEAM', href: '/' },
 
   ];
   const classes = useStyles();

@@ -11,15 +11,15 @@ import Layout from '../components/layout';
 
 const IndexPage = () => (
     <>
-<Layout>
+        <Layout>
             <NavBar />
             <Hero />
             <Main />
             <Timeline />
-            <Testimonials/>
+
             <Form />
             <Footer />
-            </Layout>
+        </Layout>
     </>
 )
 

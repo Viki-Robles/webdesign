@@ -71,11 +71,14 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '4em',
         padding: '20px',
         textDecoration: 'none',
-        fontWeight:'bold',      
+        fontWeight:'bold'   
     },
     signUpLink: {
         color:'white',
-        fontSize:'20px'
+        fontSize:'20px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize:'16px'
+        }
     }
 
 }))
@@ -117,7 +120,7 @@ export default function Hero() {
                     <Typography variant='h1' className={classes.becreative}>Creative.</Typography>
                     <Grid className={classes.projectsButton} container md={6} xs={6}>
                     <Link
-                    href='/'
+                    href='/#projects'
                     target='_blank'
                     className={classes.signUpLink}
                     style={{ textDecoration: 'none' }}>
@@ -125,10 +128,10 @@ export default function Hero() {
                   </Link>
                   </Grid>
                 </Grid>
-                <Grid container className={classes.pictureBox} style={{ transform: `translateY(${offsetY * 0.4}px)` }}>
+                <Grid container className={classes.pictureBox} style={{ transform: `translateY(${offsetY * 0.3}px)` }}>
                     <img src={hand} alt='' className={classes.picture} />
                 </Grid>
-                <Grid container className={classes.beyouBox} style={{ transform: `translateY(-${offsetY * 0.4}px)` }}>
+                <Grid container className={classes.beyouBox} style={{ transform: `translateY(-${offsetY * 0.5}px)` }}>
                     <Typography variant='h1' className={classes.beyou}>Be You.</Typography>
                 </Grid>
             </Grid>
