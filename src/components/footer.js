@@ -42,7 +42,7 @@ export default function Footer() {
             </Grid>
             <Grid container md={6} direction='column' className={classes.address}>
                 <Grid container direction='column'>
-                <Typography variant='h6' className={classes.typography}>Create</Typography>
+                <Typography variant='h6' className={classes.typography}>pringe</Typography>
                 <Typography variant='h6' className={classes.typography}>15b Hildreth Street</Typography>
                 <Typography variant='h6' className={classes.typography}>London</Typography>
                 <Typography variant='h6' className={classes.typography}>SW12 9RQ</Typography>

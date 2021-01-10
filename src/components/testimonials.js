@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {  useState, useEffect  } from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Testimonial from './testimonial';
@@ -26,7 +26,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function Testimonials() {
     const classes = useStyles();
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
 
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
     return (
         <>
        

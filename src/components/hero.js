@@ -97,10 +97,10 @@ export default function Hero() {
                     <Typography variant='h1' className={classes.becreative}>Be</Typography>
                     <Typography variant='h1' className={classes.becreative}>Creative.</Typography>
                 </Grid>
-                <Grid container className={classes.pictureBox} style={{ transform: `translateY(${offsetY * 0.3}px)` }}>
+                <Grid container className={classes.pictureBox} style={{ transform: `translateY(${offsetY * 0.4}px)` }}>
                     <img src={hand} alt='' className={classes.picture} />
                 </Grid>
-                <Grid container className={classes.beyouBox}>
+                <Grid container className={classes.beyouBox} style={{ transform: `translateY(-${offsetY * 0.4}px)` }}>
                     <Typography variant='h1' className={classes.beyou}>Be You.</Typography>
                 </Grid>
             </Grid>

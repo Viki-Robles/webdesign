@@ -73,9 +73,9 @@ export default function Main() {
                 <hr />
                 <Typography variant='h4' component='h4' className={classes.typography} id='projects'>Case Studies.</Typography>
                 <Grid container md={12} className={classes.firstMain} sm={12}>
-                    <Grid container md={6} className={classes.firstBox} sm={12} style={{ transform: `translateY(${offsetY * 0.06}px)` }}>
+                    <Grid container md={6} className={classes.firstBox} sm={12}>
                         <Typography variant='h4' component='h5' className={classes.mainSubtitles} md={6} sm={12}>Design.</Typography>
-                        <Typography component='p' variant='h6'>
+                        <Typography component='p' variant='h6' >
                             Hellohub is an app that connects locals in the social
                             distancing age and eases the void of social interaction, by enhancing human connection through.
                      </Typography>

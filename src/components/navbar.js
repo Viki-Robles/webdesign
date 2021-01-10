@@ -28,8 +28,10 @@ const useStyles = makeStyles((theme) => ({
   navBar: {
     justifyContent: 'flex-start',
     paddingTop: '40px',
+
     [theme.breakpoints.down('xs')]: {
       // justifyContent: 'space-between',
+
     },
   },
   drawer: {
@@ -47,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#F9FE12',
     color: '#000',
     [theme.breakpoints.down('xs')]: {
-      height: '9vh',
+      height: '11vh',
       backgroundColor: '#F9FE12',
     },
   },
@@ -64,18 +66,21 @@ const useStyles = makeStyles((theme) => ({
     width: 220,
     backgroundColor: 'black',
     paddingTop:'30px',
-    
+  },
+  toolbar:{
+    paddingBottom:'15px'
   },
   navLink: {
     color: `black`,
     paddingRight: 40,
     fontSize: '2rem',
     textDecoration:'none',
-    fontWeight:'600',
-    paddingTop:'15px',
+    fontWeight:'bold',
+    paddingTop:'10px',
+    fontFamily:'Ubuntu',
     [theme.breakpoints.down('sm')]: {
       color:'#F9FE12',
-      fontWeight:'600'
+      fontWeight:'bold',
     }
   },
   linkButton: {
@@ -128,18 +133,23 @@ signUpLink:{
     paddingRight:'5px'
   },
   logo:{
-    
+    padding: '0',
     marginRight:'15px',
     [theme.breakpoints.down('sm')]:{
-      width:'60%'
+      width:'60%',
+      padding: '8px 15px 8px 15px'
     },
     [theme.breakpoints.up('md')]: {
-      width:'40%'
+      width:'25%'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width:'70%'
     }
   },
   closeMenuButton:{
     fontSize:'3rem'
-  }
+  },
+ 
 })); // NavBar
 const NavBar = () => {
   const drawerLinks = [
@@ -175,7 +185,7 @@ const NavBar = () => {
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
             <Grid container className={classes.navBar} md={12}>
-            <Box display='flex'>
+            <Box display='flex' className={classes.logoContainer}>
                   <img style={{ height: 'auto' }} src={logo} alt='logo' className={classes.logo} />
          
                 <Hidden smDown>
