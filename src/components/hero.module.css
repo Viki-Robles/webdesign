@@ -6,6 +6,11 @@
 
 * body {
     display: inline-block;
+    font-family: 'futura-pt, sans-serif';
+}
+
+h6 {
+    font-family: 'futura-pt, sans-serif';
 }
 
 
@@ -175,7 +180,7 @@ hr {
         font-size: 20px;
         z-index: 10;
         color: #1a2b3d;
-        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+       
 
 }
 

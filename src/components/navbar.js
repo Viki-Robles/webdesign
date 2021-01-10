@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuButton: {
+    fontSize:'3rem',
     [theme.breakpoints.up('md')]: {
       display: 'none',
       color: '#FFA500',
@@ -73,24 +74,27 @@ const useStyles = makeStyles((theme) => ({
   navLink: {
     color: `black`,
     paddingRight: 40,
-    fontSize: '2rem',
+    fontSize: '16px',
     textDecoration:'none',
-    fontWeight:'bold',
+    fontWeight:'600',
     paddingTop:'10px',
-    fontFamily:'Ubuntu',
+    letterSpacing: '.1em',
     [theme.breakpoints.down('sm')]: {
       color:'#F9FE12',
       fontWeight:'bold',
     }
   },
   linkButton: {
-  padding:'8px 20px 8px 20px',
+  padding:'8px 10px 8px 10px',
   color:'black'
 },
 signUpLink:{
     color:'white'
 },
   purpleButton: {
+    [theme.breakpoints.down('sm')]:{
+        display:'none'
+    },
     backgroundColor: `black`,
     '&:hover': {
       backgroundColor: `black`,
@@ -98,9 +102,10 @@ signUpLink:{
     display: 'inline-flex',
     alignItems: 'right',
     justifyContent: 'center',
-    borderRadius: 4,
-    padding: '8px 15px 8px 15px',
+    borderRadius: '4em',
+    padding: '10px 15px',
     textDecoration: 'none',
+    fontWeight:'bold'
   },
   mainText: {
     color: `rgba(81, 51, 171, 1)`,
@@ -125,6 +130,9 @@ signUpLink:{
     marginLeft: 0,
     color: '#F9FE12'
   },
+  menuIcon:{
+fontSize:'2.5rem'
+  },
   headerTitle: {
     paddingRight: 40,
     fontWeight:600
@@ -140,7 +148,7 @@ signUpLink:{
       padding: '8px 15px 8px 15px'
     },
     [theme.breakpoints.up('md')]: {
-      width:'25%'
+      width:'35%'
     },
     [theme.breakpoints.down('xs')]: {
       width:'70%'
@@ -153,9 +161,11 @@ signUpLink:{
 })); // NavBar
 const NavBar = () => {
   const drawerLinks = [
-    { text: 'About', href: '/' },
-    { text: 'Projects', href: '#projects' },
-    { text: 'Blog', href: '/' },
+    { text: 'HOME', href: '/' },
+    { text: 'SERVICES', href: '' },
+    { text: 'WORK', href: '#projects' },
+    { text: 'TEAM', href: '/' },
+
   ];
   const classes = useStyles();
 
@@ -184,41 +194,46 @@ const NavBar = () => {
         <CssBaseline />
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
-            <Grid container className={classes.navBar} md={12}>
+            <Grid container className={classes.navBar} md={6} direction='row'>
             <Box display='flex' className={classes.logoContainer}>
                   <img style={{ height: 'auto' }} src={logo} alt='logo' className={classes.logo} />
-         
+                </Box>
+            </Grid>
+
+            <Grid container md={6} justify="flex-end">
+              <Grid container direction='row' md={9} justify="flex-end">
                 <Hidden smDown>
                   {drawerLinks.map(
                     (link, i) =>
                       i !== drawerLinks.length + 1 && (
                         <Link key={i} href={link.href} target='_blank' className={classes.navLink}>
-                            <Typography variant='h6'>{link.text}</Typography>
+                           {link.text}
                         </Link>
                       )
                   )}
                 </Hidden>
-                </Box>
-            </Grid>
-            <Grid container md={6} justify="flex-end" display="contents">
-            <Box className={classes.purpleButton}>
+                </Grid>
+            <Grid container className={classes.purpleButton} md={3}>
                   <Link
                     href='https://meetings.hubspot.com/vasiliki-robles'
                     target='_blank'
                     className={classes.signUpLink}
                     style={{ textDecoration: 'none' }}>
-                    Contact us
+                    GET STARTED
                   </Link>
-                </Box>
+                </Grid>
+               
                 <IconButton
                   color='inherit'
                   aria-label='Open drawer'
                   edge='start'
                   onClick={handleDrawerToggle}
                   className={classes.menuButton}>
-                  <MenuIcon />
+                  <MenuIcon className={classes.menuIcon}/>
                 </IconButton>
                 </Grid>
+
+
           </Toolbar>
         </AppBar>          
         {/* CODE FOR WHEN DRAWER IS OPEN  0 20 50 rgba(0 0 0 , .5)*/}

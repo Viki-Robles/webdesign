@@ -1,9 +1,10 @@
 import React, { useState, useEffect  } from "react";
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import styles from './hero.module.css';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 import hand from '../images/handpicture.png';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
     hero: {
@@ -42,13 +43,15 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center'
     },
     becreative: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom:'30px',
     },
     becreativeBox: {
         paddingLeft: '20px',
-        marginTop: '15%',
+        marginTop: '20%',
         [theme.breakpoints.up('md')]: {
             marginTop: '5%',
+            
         }
     },
     beyouBox: {
@@ -57,6 +60,22 @@ const useStyles = makeStyles((theme) => ({
     },
     beyou: {
         fontWeight: 600
+    },
+    projectsButton:{
+        backgroundColor: `black`,
+        '&:hover': {
+          backgroundColor: `black`,
+        },
+        alignItems: 'right',
+        justifyContent: 'center',
+        borderRadius: '4em',
+        padding: '20px',
+        textDecoration: 'none',
+        fontWeight:'bold',      
+    },
+    signUpLink: {
+        color:'white',
+        fontSize:'20px'
     }
 
 }))
@@ -92,10 +111,19 @@ export default function Hero() {
     return (
         <>
             <Grid container className={classes.hero} md={12} sm={12} xs={12}>
-                <Grid container direction='column' className={classes.becreativeBox} 
+                <Grid container direction='column' className={classes.becreativeBox} md={6} 
                 style={{ transform: `translateY(-${offsetY * 0.5}px)` }}>
                     <Typography variant='h1' className={classes.becreative}>Be</Typography>
                     <Typography variant='h1' className={classes.becreative}>Creative.</Typography>
+                    <Grid className={classes.projectsButton} container md={6} xs={6}>
+                    <Link
+                    href='/'
+                    target='_blank'
+                    className={classes.signUpLink}
+                    style={{ textDecoration: 'none' }}>
+                    VIEW OUR WORK
+                  </Link>
+                  </Grid>
                 </Grid>
                 <Grid container className={classes.pictureBox} style={{ transform: `translateY(${offsetY * 0.4}px)` }}>
                     <img src={hand} alt='' className={classes.picture} />

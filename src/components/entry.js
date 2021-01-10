@@ -32,7 +32,7 @@ export class Entry extends React.Component {
         paddingBottom:'100px',
         background: lineColor,
         borderRadius:'10px',
-        fontFamily:'"Roboto", "Helvetica", "Arial", sans-serif',
+        fontFamily:'futura-pt, sans-serif',
         [`@media screen and (max-width: ${mediaWidthSmall}px)`]: {
           margin: '0 auto 0 20px',
         },
@@ -61,7 +61,7 @@ export class Entry extends React.Component {
             alignItems: 'center',
             width: '100%',
             height: '100%',
-            fontFmily:'Roboto',
+            fontFmily:'futura-pt, sans-serif',
           }
         },
         inView: {

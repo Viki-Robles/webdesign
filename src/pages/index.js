@@ -7,10 +7,11 @@ import Form from '../components/form';
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
 import Testimonials from '../components/testimonials';
+import Layout from '../components/layout';
 
 const IndexPage = () => (
     <>
-
+<Layout>
             <NavBar />
             <Hero />
             <Main />
@@ -18,7 +19,7 @@ const IndexPage = () => (
             <Testimonials/>
             <Form />
             <Footer />
-       
+            </Layout>
     </>
 )
 
