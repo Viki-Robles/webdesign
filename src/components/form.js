@@ -8,7 +8,8 @@ import Link from '@material-ui/core/Link';
 const useStyles = makeStyles((theme) => ({
     actionbutton: {
         [theme.breakpoints.down('sm')]:{
-          
+          padding:'15px',
+          width:'50%'
         },
         backgroundColor: `black`,
         '&:hover': {
@@ -20,11 +21,12 @@ const useStyles = makeStyles((theme) => ({
         padding: '25px 5px',
         textDecoration: 'none',
         fontWeight:'bold',
-        marginBottom:'10%'
+        marginBottom:'20%'
       },
       signUpLink:{
         color:'white',
-        fontSize:'20px'
+        fontSize:'20px',
+        
     },
     // input: {
     //     width: '250px',
