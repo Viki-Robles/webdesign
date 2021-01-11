@@ -6,7 +6,6 @@ import Timeline from '../components/index'
 import Form from '../components/form';
 import NavBar from '../components/navbar';
 import Footer from '../components/footer';
-import Testimonials from '../components/testimonials';
 import Layout from '../components/layout';
 
 const IndexPage = () => (

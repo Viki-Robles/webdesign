@@ -10,10 +10,10 @@ import uxdesign from '../images/uxdesign.svg';
 
 
 const data = [
-  {services:'Web Design', details:'We combine UI design with insight-led user experience strategy to create websites, and bespoke interfaces. An experience that enhances your brand, underpinned by a sharp focus on your commercial considerations.', picture:uidesign},
-  {services:'Mobile Development', details:'Animations, WordPress, Responsive Website', picture:mobile},
-  {services:'Website Design', details:'HTML/CSS, ReactJS, Gatsby, NextJS', picture:website},
-  {services:'UI/UX', details:'Landing Pages, Wireframing, Prototyping, Mobile App Design', picture:uxdesign},
+  {services:'Website Design', details:'We combine UI design with insight-led user experience strategy to create websites, and bespoke interfaces. An experience that enhances your brand, underpinned by a sharp focus on your commercial considerations.', picture:uidesign},
+  {services:'Mobile Development', details:'Responsive Website, Landing Pages, Wireframing, Prototyping, Mobile App Design', picture:mobile},
+  {services:'Website Development', details:'ReactJS, Gatsby, NextJS', picture:website},
+  {services:'Website Maintainance', details:'We are making sure that your website keeps working as it should.', picture:uxdesign},
 
 ]
 
