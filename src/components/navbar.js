@@ -14,7 +14,7 @@ import { Grid, Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
-import logo from '../images/logo2.svg';
+import logo from '../images/mylogo.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navBar: {
     justifyContent: 'flex-start',
-    paddingTop: '40px',
+    paddingTop: '20px',
 
     [theme.breakpoints.down('xs')]: {
       // justifyContent: 'space-between',
@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#F9FE12',
     },
   },
+
   menuButton: {
     fontSize:'3rem',
     [theme.breakpoints.up('md')]: {
@@ -116,6 +117,9 @@ signUpLink:{
       marginBottom: 15,
     },
   },
+  logoContainer:{
+    paddingTop:'5px'
+  },
   subText: {
     color: `rgba(81, 51, 171, 1)`,
     marginBottom: 20,
@@ -137,14 +141,11 @@ fontSize:'2.5rem'
     paddingRight: 40,
     fontWeight:600
   },
-  containerLogo:{
-    paddingRight:'5px'
-  },
   logo:{
     padding: '0',
     marginRight:'15px',
     [theme.breakpoints.down('sm')]:{
-      width:'60%',
+      width:'40%',
       padding: '8px 15px 8px 15px'
     },
     [theme.breakpoints.up('md')]: {
